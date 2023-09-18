@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <title>CENTRAL DE CANCELAMENTOS RABLAIVE</title>
+    <title>CENTRAL DE CANCELAMENTOS HABBLIVE</title>
 
 </head>
 
@@ -22,7 +22,7 @@
 </head>
 
 <style type="text/css">
-    *{
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -81,6 +81,7 @@ input{
   color: white;
   border: 3px solid #32333C;
   border-radius: 3px;
+  transition: all .1s ease-in;
 }
 
 #bntAplicar{
@@ -95,15 +96,12 @@ input{
   cursor: pointer;
   transition: all .2s;
 }
-#bntAplicar:hover{
+#btnAplicar:hover{
   background-color: #8504DB;  
 }
-.container{
-    display: flex;
-    justify-content: center;
-}
+
 h1, h2{
-text-align: center;
+  text-align: center;
 }
 </style>
 <header>
@@ -122,132 +120,77 @@ text-align: center;
 </main>
 
 <script>
+  const nickname = document.querySelector("#inputNick")
+  const TextoCancelamento = document.querySelector("#TextCancell")
+  const btn = document.querySelector("#bntAplicar")
+  const img = document.querySelector("#imgPlayer")
+
+  nickname.addEventListener('input', ()=>{
+    img.src=`https://habblive.in/imager.php?user=${nickname.value}&action=wav&size=l&head_direction=2&direction=2&gesture=std`
+    nickname.style.border = '3px solid #32333C'
+  })
+
+  bntAplicar.addEventListener('click', ()=>{
     
-const nickname = document.querySelector("#inputNick")
-const TextoCancelamento = document.querySelector("#TextCancell")
-const btn = document.querySelector("#bntAplicar")
-const img = document.querySelector("#imgPlayer")
-
-nickname.addEventListener('input', ()=>{
-  img.src=`https://habblive.in/imager.php?user=${nickname.value}&action=wav&size=l&head_direction=2&direction=2&gesture=std`
-})
-
-bntAplicar.addEventListener('click', ()=>{
-  let cancelamento = parseInt(Math.random() * 30 + 1)
-    if(cancelamento == 1){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por falar merda demais!`
-  }
-    if(cancelamento == 2){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por se engasgar com uma piroka!`
-  }
-    if(cancelamento == 3){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por traficar raros!`
-  }
-    if(cancelamento == 4){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por gastar no picnic!`
-  }
-    if(cancelamento == 5){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por perder todos eventos de MOD!`
-  }
-    if(cancelamento == 6){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por vender raro por PIX!`
-  }
-    if(cancelamento == 7){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por dar o cu!`
-  }
-    if(cancelamento == 8){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por vender o banco de dados do hotel!`
-  }
-    if(cancelamento == 9){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por traficar gatos!`
-  }
-    if(cancelamento == 10){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por perder todos jogos da promotoria!`
-  }
-
-    if(cancelamento == 11){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por pedir moedinha na rua!`
+    if(nickname.value == ''){
+      nickname.style.border = '3px solid #E71111'
+      TextoCancelamento.textContent = 'Pelo o que essa pessoa será cancelada?'
+      img.src=`https://habblive.in/imager.php?user=vini259.&action=wav&size=l&head_direction=2&direction=2&gesture=std`
+      return
     }
 
-    if(cancelamento == 12){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por fazer GF!`
-    }
+    nickname.style.border = '3px solid #32333C'
     
-    if(cancelamento == 13){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ser um(a) filho duma puta!`
-    }
+    let array = [
+      'falar merda demais',
+      'se engasgar com uma piroka',
+      'traficar raros',
+      'gastar no picnic',
+      'perder todos eventos de MOD',
+      'vender raro por PIX',
+      'dar o cu',
+      'vender o banco de dados do hotel',
+      'traficar gatos',
+      'perder todos jogos da promotoria',
+      'pedir moedinha na rua',
+      'fazer GF',
+      'ser corno(a)',
+      'ter feito sexo a 3',
+      'babar ovo de staff',
+      'ser um(a) arrombado(a)',
+      'tomar no meio do cu',
+      'webnamorar',
+      'nada',
+      'jogar habblive',
+      'jogar em 2 hoteis ao mesmo tempo',
+      'ser talarico(a)',
+      'roubar wifi do vizinho',
+      'ter cu avantajado',
+      'ter cu de apito',
+      'ter cu de parafuso',
+      'nascer',
+      'ser militante',
+      '...ninguém se importa com essa praga',
+      'ser hetero',
+      'ser gay',
+      'por ser rodar bolsinha',
+      'usar a bunda além da conta',
+      'ser racista',
+      'ser xenofobico',
+      'ser baiano',
+      'ter cabeça d`água',
+      'entupir o vazo do banheiro',
+      'ser pobre',
+      'demorar demais a jogar o fujamento',
+    ]
 
-    if(cancelamento == 14){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ser corno(a)!`
-    }
+    let cancelamento = parseInt(Math.random() * 40 + 1)
 
-    if(cancelamento == 15){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ter feito sexo a 3!`
-    }
+    TextoCancelamento.textContent = `${nickname.value} foi cancelado(a) por ${array[cancelamento]}!`
 
-    if(cancelamento == 16){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por babar ovo de staff!`
-    }
+  })
 
-    if(cancelamento == 17){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ser um(a) arrombado(a)!`
-    }
-
-    if(cancelamento == 18){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por tomar no meio do cu!`
-    }
-
-    if(cancelamento == 19){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por webnamorar!`
-    }
-
-    if(cancelamento == 20){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por nada!`
-    }
-
-    if(cancelamento == 21){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por jogar habblive!`
-    }
-
-    if(cancelamento == 22){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por jogar em 2 hoteis ao mesmo tempo!`
-    }
-
-    if(cancelamento == 23){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ser talarico(a)!`
-    }
-
-    if(cancelamento == 24){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por roubar wifi do vizinho!`
-    }
-
-    if(cancelamento == 25){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ter cu avantajado!`
-    }
-
-    if(cancelamento == 26){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ter cu de apito!`
-    }
-
-    if(cancelamento == 27){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ter cu de parafuso!`
-    }
-
-    if(cancelamento == 28){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por nascer!`
-    }
-
-    if(cancelamento == 29){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por ser militante!`
-    }
-
-    if(cancelamento == 30){
-    TextoCancelamento.textContent = `${nickname.value} Foi cancelado(a) por... ninguém se importa com essa praga!`
-    }
-  
-})
-
-    console.log("Feito por vini259.")
+  console.log('Feito pelo maravilhoso vini259. gostoso!')
 </script>
 
 </body>
