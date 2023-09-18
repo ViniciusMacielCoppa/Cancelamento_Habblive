@@ -125,25 +125,21 @@ h1, h2{
 
 <script>
 
-    localStorage.teste259 = 1
-    if(getItem.getItem('teste259') == 1){
-        alert('teste')
-    }
-      const nickname = document.querySelector("#inputNick")
-  const TextoCancelamento = document.querySelector("#TextCancell")
-  const btn = document.querySelector("#bntAplicar")
-  const img = document.querySelector("#imgPlayer")
+    const nickname = document.querySelector("#inputNick")
+    const TextoCancelamento = document.querySelector("#TextCancell")
+    const btn = document.querySelector("#bntAplicar")
+    const img = document.querySelector("#imgPlayer")
 
-  nickname.addEventListener('input', ()=>{
+    nickname.addEventListener('input', ()=>{
     img.src=`https://habblive.in/imager.php?user=${nickname.value}&action=wav&size=l&head_direction=2&direction=2&gesture=std`
     nickname.style.border = '3px solid #32333C'
     if(nickname.value.trim() == ''){
       TextoCancelamento.textContent = 'Pelo o que essa pessoa será cancelada?'
       img.src=`https://habblive.in/imager.php?user=vini259.&action=wav&size=l&head_direction=2&direction=2&gesture=std`
     }
-  })
-
-  bntAplicar.addEventListener('click', ()=>{
+    })
+    
+    bntAplicar.addEventListener('click', ()=>{
     
     if(nickname.value.trim() == ''){
       nickname.style.border = '3px solid #E71111'
@@ -151,7 +147,7 @@ h1, h2{
       img.src=`https://habblive.in/imager.php?user=vini259.&action=wav&size=l&head_direction=2&direction=2&gesture=std`
       return
     }
-
+    
     nickname.style.border = '3px solid #32333C'
     
     let array = [
@@ -196,14 +192,14 @@ h1, h2{
       'ser pobre',
       'demorar demais a jogar o fujamento',
     ]
-
+    
     let cancelamento = parseInt(Math.random() * 40 + 1)
-
+    
     TextoCancelamento.textContent = `${nickname.value} foi cancelado(a) por ${array[cancelamento]}!`
-
-  })
-
-  console.log('Feito pelo maravilhoso vini259. gostoso!')
+    
+    })
+    
+    console.log('Feito pelo maravilhoso vini259. gostoso!')
 </script>
 
 </body>
