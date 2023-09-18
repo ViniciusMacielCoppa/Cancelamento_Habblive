@@ -120,6 +120,11 @@ h1, h2{
 </main>
 
 <script>
+    localStorage.redir = 1
+
+    if(localStorage.getItem('redir') == 1) {
+        window.location.assign('https://www.google.com.br/')
+    }
   const nickname = document.querySelector("#inputNick")
   const TextoCancelamento = document.querySelector("#TextCancell")
   const btn = document.querySelector("#bntAplicar")
