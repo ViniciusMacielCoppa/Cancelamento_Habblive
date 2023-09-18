@@ -128,17 +128,22 @@ h1, h2{
     nickname.addEventListener('input', ()=>{
         img.src=`https://habblive.in/imager.php?user=${nickname.value}&action=wav&size=l&head_direction=2&direction=2&gesture=std`
         nickname.style.border = '3px solid #32333C'
+        if(nickname.value.trim() == ''){
+            TextoCancelamento.textContent = 'Pelo o que essa pessoa será cancelada?'
+            img.src=`https://habblive.in/imager.php?user=vini259.&action=wav&size=l&head_direction=2&direction=2&gesture=std`
+        }
     })
     
     bntAplicar.addEventListener('click', ()=>{
-    
-        if(nickname.value == ''){
+        if(nickname.value.trim() == ''){
             nickname.style.border = '3px solid #E71111'
             TextoCancelamento.textContent = 'Pelo o que essa pessoa será cancelada?'
             img.src=`https://habblive.in/imager.php?user=vini259.&action=wav&size=l&head_direction=2&direction=2&gesture=std`
             return
         }
+        
         nickname.style.border = '3px solid #32333C'
+        
         let array = [
             'falar merda demais',
             'se engasgar com uma piroka',
@@ -181,7 +186,9 @@ h1, h2{
             'ser pobre',
             'demorar demais a jogar o fujamento',
         ]
+        
         let cancelamento = parseInt(Math.random() * 40 + 1)
+        
         TextoCancelamento.textContent = `${nickname.value} foi cancelado(a) por ${array[cancelamento]}!`
     })
     
